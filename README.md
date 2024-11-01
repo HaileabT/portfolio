@@ -33,7 +33,7 @@ This is my portfolio website I built from scratch with Nuxt 3, showcasing my ski
 1. Clone the repo
 
 ```git
-git clone //some link
+git clone https://github.com/HaileabT/portfolio.git
 ```
 
 2. Install dependencies
