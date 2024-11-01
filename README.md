@@ -1,75 +1,55 @@
-# Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Haileab's Portfolio Website
 
-## Setup
+This is my portfolio website I built from scratch with Nuxt 3, showcasing my skills in web development. This site highlights my projects and experience in creating web applications with a focus on clean UI and robust web API.
+## Author
 
-Make sure to install dependencies:
+[Haileab Tesfaye](https://www.github.com/HaileabT)
 
-```bash
-# npm
-npm install
 
-# pnpm
+## Links
+[Vercel Live](https://haileabtesfaye.vercel.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]( https://www.linkedin.com/in/haileab-tesfaye-08414b199)
+[![twitter](https://img.shields.io/badge/github-1DA1F2?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/HaileabT)
+
+
+## For Developers
+
+#### Technologies I used
+[Nuxt 3](https://nuxt.com/)
+
+[Tailwind](https://tailwindcss.com/)
+
+[GSAP](https://gsap.com/): This is what I used to animate most stuff.
+
+[Rellax](https://dixonandmoe.com/rellax/): I used this to add parallax scroll effect.
+
+[nuxt3-lenis](https://github.com/benoitdelorme/nuxt3-lenis): This is a very nice library to add smooth scroll to your projects.
+
+[Google Fonts for Nuxt 3](https://google-fonts.nuxtjs.org/)
+
+#### If you want to play around with the code
+
+1. Clone the repo
+
+```git
+git clone //some link
+```
+
+2. Install dependencies
+
+```pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+3. Run it locally
+```pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
+5. Play around with the code and have fun
+## License
 
-## Production
+[MIT](https://github.com/HaileabT/portfolio/blob/master/LICENSE)
 
-Build the application for production:
+Read the LICENSE file for more attribution rules. 
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
