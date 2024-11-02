@@ -10,11 +10,6 @@ export const useEducation = () => {
       institute: "Addis Ababa Science and Technology University",
       description: "A 4th year software engineering student.",
     },
-    {
-      title: "HighSchool Diploma",
-      institute: "Random School",
-      description: "Finished my high school years at Random School.",
-    },
   ]);
 
   return {
