@@ -6,10 +6,7 @@
           About Me
         </h2>
         <p class="text-center text-lg text-dark-bg-lighter">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sunt
-          inventore eaque modi aliquam architecto facere, cum impedit optio
-          ducimus deleniti aut ut aperiam, ipsa tenetur quidem accusantium
-          voluptatem natus?
+          {{ aboutMe }}
         </p>
       </div>
       <div class="">
@@ -40,4 +37,6 @@
 
 <script lang="ts" setup>
 const { education } = useEducation();
+const aboutMe =
+  "I'm a full-stack web developer with a love for crafting user-friendly web applications. On the frontend, I'm comfortable working with Vue 3, Nuxt 3 and tailwindcss. For the backend, I work with Node.js to build RESTful and GraphQL APIs. I can design and manage database solutions with Postgres and MongoDB. Whether it's a simple app or a complex project, I enjoy bringing ideas to life through clean, efficient code.";
 </script>

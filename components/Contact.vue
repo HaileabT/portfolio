@@ -42,7 +42,10 @@
             <i
               class="fa-solid fa-circle-exclamation text-[#ff5353] block text-center mb-4 relative animate-slide-down"
             ></i>
-            <h4 class="relative animate-slide-up">
+            <h3 class="relative text-center animate-slide-up text-xl">
+              {{ mailingErrorStatus }}
+            </h3>
+            <h4 class="relative text-center animate-slide-up">
               {{ mailingErrorMessage }}
             </h4>
           </div>
@@ -97,6 +100,7 @@ const sendingEmail = ref<boolean>(false);
 const hasMailError = ref<boolean>(false);
 const hasMailSuccess = ref<boolean>(false);
 const mailingErrorMessage = ref<string>("");
+const mailingErrorStatus = ref<number>();
 
 const resetMailingStatus = (sucess: boolean) => {
   if (sucess) {
@@ -141,7 +145,7 @@ const sendContactEmail = async () => {
       const response = await $fetch("/api/sendMail", {
         method: "POST",
         body: {
-          from: name.value + " from " + email.value,
+          // from: name.value + " from " + email.value,
           subject:
             "From " +
             email.value +
@@ -152,12 +156,12 @@ const sendContactEmail = async () => {
         },
       });
       hasMailSuccess.value = true;
-      mailingErrorMessage.value = "Something went wrong.";
       setTimeout(resetMailingStatus.bind(null, true), 2000);
-      // console.log(response);
     } catch (err: any) {
+      console.log(err);
       hasMailError.value = true;
-      mailingErrorMessage.value = "Something went wrong.";
+      mailingErrorMessage.value = err.message;
+      mailingErrorStatus.value = err.status;
       setTimeout(resetMailingStatus.bind(null, false), 2000);
     } finally {
       sendingEmail.value = false;
