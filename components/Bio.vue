@@ -1,5 +1,5 @@
 <template>
-  <div id="bio" class="bg-dark-normal-text py-32 px-10 scroll-smooth">
+  <div id="bio" class="bg-dark-normal-text py-32 px-5 md:px-10 scroll-smooth">
     <div class="bio flex flex-col gap-10 max-w-[1200px] mx-auto items-center">
       <div class="relative">
         <h2 class="text-center text-2xl font-extrabold mb-2 text-dark-bg">
@@ -16,11 +16,11 @@
         <h2 class="text-center text-2xl font-extrabold mb-4 text-dark-bg">
           Education
         </h2>
-        <ul class="grid grid-cols-2 gap-4">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <li
             v-for="edu in education"
             :key="edu.title"
-            class="bg-dark-header-text p-4"
+            class="bg-dark-header-text p-4 rounded-[0.35rem]"
           >
             <div class="">
               <h3 class="font-bold text-dark-bg text-[1.1rem] mb-0">
