@@ -20,8 +20,30 @@ export default {
       },
     },
     extend: {
+      keyframes: {
+        "slide-down": {
+          "0%": {
+            top: "-50px",
+          },
+          "100%": {
+            top: "0px",
+          },
+        },
+        "slide-up": {
+          "0%": {
+            bottom: "-50px",
+          },
+          "100%": {
+            bottom: "0px",
+          },
+        },
+      },
       fontSize: {
         md: "1rem",
+      },
+      animation: {
+        "slide-down": "slide-down 0.5s 1",
+        "slide-up": "slide-up 0.5s 1",
       },
     },
   },
