@@ -106,7 +106,6 @@ if (useRuntimeConfig().logo_cloud_url) {
 
 onMounted(async () => {
   setTimeout(() => {
-    console.log(lenis);
     lenis.value.on("scroll", ScrollTrigger.update);
 
     gsap.registerPlugin(ScrollTrigger);
@@ -119,6 +118,25 @@ onMounted(async () => {
         markers: false,
       },
     });
+    const tl1 = gsap.timeline();
+
+    if (window.scrollY >= 200) {
+      tl1
+        .to(".svg", {
+          bottom: 90 + "%",
+          left: 4 + "rem",
+          y: 0 + "%",
+          x: 0 + "%",
+          width: 2.5 + "rem",
+          height: 2.5 + "rem",
+          ease: "ease.out",
+        })
+        .eventCallback("onComplete", () => {
+          ScrollTrigger.refresh();
+          ScrollTrigger.update();
+          tl1.clear();
+        });
+    }
 
     document.addEventListener("mousemove", (e) => {
       // console.log(document.elementFromPoint(e.x, e.y));
