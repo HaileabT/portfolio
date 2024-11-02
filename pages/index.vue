@@ -18,7 +18,7 @@
     <Header
       @link-clicked="
         (link) => {
-          lenis?.scrollTo(`${link.url}`);
+          return lenis?.scrollTo(`${link.url}`);
         }
       "
     />
@@ -39,7 +39,7 @@
     <NuxtLink
       @click.prevent="
         () => {
-          lenis?.scrollTo(`#contact`);
+          return lenis?.scrollTo(`#contact`);
         }
       "
       class="pointer-grow lg:text-xl text-md text-dark-header-text"
