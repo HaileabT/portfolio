@@ -2,9 +2,16 @@ type Tech = {
   title: string;
   description: string;
 };
+
+type ProjectPartner = {
+  name: string;
+  link: string;
+};
 type Project = {
   title: string;
+  link?: string;
   tech: Tech[];
+  partners?: ProjectPartner[];
   description: string;
   picture: string;
 };
@@ -12,38 +19,13 @@ export const useProject = () => {
   const projects = useState<Project[]>("projects", () => [
     {
       title: "MMCY Tech Talent Spot Web Portal",
-      tech: [
+      link: "https://mmcy-talent-spot-portal-client.vercel.app",
+      partners: [
         {
-          title: "Nuxt 3",
-          description: "Frontend framework built on vue",
-        },
-        {
-          title: "GraphQL",
-          description: "API prefered for optimized fetching.",
+          name: "Nehemiah Aklil",
+          link: "https://et.linkedin.com/in/nehemiahaklil",
         },
       ],
-      description:
-        "Designed, built and deployed MMCY Tech talent spot web portal.",
-      picture: "somePicture",
-    },
-    {
-      title: "MMCY Tech Talent Spot Web Portal",
-      tech: [
-        {
-          title: "Nuxt 3",
-          description: "Frontend framework built on vue",
-        },
-        {
-          title: "GraphQL",
-          description: "API prefered for optimized fetching.",
-        },
-      ],
-      description:
-        "Designed, built and deployed MMCY Tech talent spot web portal.",
-      picture: "somePicture",
-    },
-    {
-      title: "MMCY Tech Talent Spot Web Portal",
       tech: [
         {
           title: "Nuxt 3",
@@ -51,7 +33,15 @@ export const useProject = () => {
         },
         {
           title: "Vue 3",
-          description: "Frontend framework built on vue",
+          description: "Clean and fast javascript frontend library",
+        },
+        {
+          title: "Tailwindcss",
+          description: "Class based css library",
+        },
+        {
+          title: "Shadcn-vue",
+          description: "Shadcn UI library for vue",
         },
         {
           title: "Apollo Server",
@@ -76,7 +66,24 @@ export const useProject = () => {
       ],
       description:
         "Designed, built and deployed MMCY Tech talent spot web portal.",
-      picture: "somePicture",
+      picture: "/mmcy_talents.png",
+    },
+    {
+      title: "Optimized simple ball bouncing simulation",
+      link: "https://haileabt.github.io/bol_go_bounce",
+      tech: [
+        {
+          title: "HTML Canvas",
+          description: "HTML Canvas API for rendering 2D drawing.",
+        },
+        {
+          title: "Typescript",
+          description: "Typed language built around javascript",
+        },
+      ],
+      description:
+        "This was a fun little project I tried when trying to learn how to optimized the Canvas API.",
+      picture: "/bol_bounce.png",
     },
   ]);
 
