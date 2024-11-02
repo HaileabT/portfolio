@@ -13,7 +13,7 @@
         <h2 class="text-center text-2xl font-extrabold mb-4 text-dark-bg">
           Education
         </h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ul class="flex justify-center gap-4">
           <li
             v-for="edu in education"
             :key="edu.title"
