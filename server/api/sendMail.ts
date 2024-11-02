@@ -1,9 +1,39 @@
 import nodemailer from "nodemailer";
+import { z } from "zod";
+import { AppError } from "~/util/AppError";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
 
-  console.log(body);
+  const contactSchema = z.object({
+    from: z
+      .string()
+      .trim()
+      .min(1, "From too short")
+      .max(200, "From string to long."),
+    subject: z
+      .string()
+      .trim()
+      .min(1, "Subject too short")
+      .max(200, "Subject to long."),
+    text: z
+      .string()
+      .trim()
+      .min(1, "Message is too short.")
+      .max(2000, "Message too long."),
+  });
+
+  contactSchema.required({
+    from: true,
+    subject: true,
+    text: true,
+  });
+
+  const isBodySafe = await contactSchema.safeParseAsync(body);
+
+  if (!isBodySafe.success) {
+    throw new AppError("Something wrong with your input.", 400);
+  }
 
   const mailer = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -25,6 +55,6 @@ export default defineEventHandler(async (event) => {
   try {
     await mailer.sendMail(mailOptions);
   } catch (error) {
-    console.log(error);
+    throw new AppError("This one is my problem.", 500);
   }
 });
