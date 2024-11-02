@@ -3,9 +3,7 @@
     id="skills"
     class="pointer-events-none bg-dark-header-text scroll-smooth py-20 px-5 md:px-10"
   >
-    <h2 class="text-dark-bg font-extrabold text-4xl lg:text-center text-left">
-      My Skills
-    </h2>
+    <h2 class="text-dark-bg font-extrabold text-4xl text-center">My Skills</h2>
     <div
       class="pointer-events-none w-full h-full grid place-items-center grid-cols-1 lg:grid-cols-[30%_1fr] py-12 gap-10 lg:gap-5 max-w-[1200px] mx-auto overflow-hidden"
     >
