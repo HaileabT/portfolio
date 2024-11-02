@@ -30,24 +30,11 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/icon",
     "@nuxtjs/cloudinary",
-    [
-      "nuxt-mail",
-      {
-        message: {
-          to: process.env.EMAIL_USER,
-        },
-        smtp: {
-          service: "gmail",
-          auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASSWORD,
-          },
-        },
-      },
-    ],
-    "nuxt-mail",
   ],
+
   runtimeConfig: {
+    emailUser: process.env.EMAIL_USER,
+    emailPassword: process.env.EMAIL_PASSWORD,
     logo_cloud_url: process.env.LOGO_CLOUDINARY_URL,
   },
   googleFonts: {

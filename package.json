@@ -18,10 +18,8 @@
     "@nuxtjs/tailwindcss": "^6.12.2",
     "gsap": "^3.12.5",
     "lenis": "^1.1.14",
-    "nodemailer": "^6.9.16",
     "nuxi": "^3.15.0",
     "nuxt": "^3.13.2",
-    "nuxt-mail": "^5.1.1",
     "nuxt3-lenis": "^1.5.9",
     "rellax": "^1.12.1",
     "vue": "latest",
@@ -33,6 +31,7 @@
     "@types/gsap": "^3.0.0",
     "@types/nodemailer": "^6.4.16",
     "@types/rellax": "^1.7.7",
+    "nodemailer": "^6.9.16",
     "tailwindcss": "^3.4.14"
   }
 }
