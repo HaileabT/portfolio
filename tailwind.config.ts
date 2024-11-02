@@ -18,7 +18,11 @@ export default {
         "sub-header-text": "#cdbff0",
       },
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        md: "1rem",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

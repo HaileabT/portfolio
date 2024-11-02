@@ -6,13 +6,13 @@
   ></div>
   <div
     v-html="logoContent"
-    class="svg w-10 fixed left-[50%] bottom-[45%] translate-x-[-50%] translate-y-[-50%] z-40"
-    style="
-      width: 10rem;
-      height: 10rem;
-      fill: #cdbff0;
-      mix-blend-mode: difference;
-    "
+    class="svg hidden lg:block w-[4rem] h-[4rem] lg:w-[8rem] lg:h-[8rem] fixed left-[50%] bottom-[50%] lg:bottom-[45%] translate-x-[-50%] translate-y-[-50%] z-40"
+    style="fill: #cdbff0; mix-blend-mode: difference"
+  ></div>
+  <div
+    v-html="logoContent"
+    class="block lg:hidden w-[1.8rem] h-[1.8rem] fixed left-8 md:left-14 top-14 md:top-16 translate-x-[-50%] translate-y-[-50%] z-40"
+    style="fill: #cdbff0; mix-blend-mode: difference"
   ></div>
   <div id="svg-container" class="svg-container bg-red-700">
     <Header
@@ -28,8 +28,10 @@
   <Projects />
   <Skills />
 
-  <div class="fixed bottom-5 right-10 mix-blend-difference">
-    <NuxtLink to="/contact" class="pointer-grow text-xl text-dark-header-text"
+  <div class="fixed bottom-5 right-5 lg:right-10 mix-blend-difference">
+    <NuxtLink
+      to="/contact"
+      class="pointer-grow lg:text-xl text-md text-dark-header-text"
       >Contact Me</NuxtLink
     >
   </div>
@@ -132,8 +134,8 @@ onMounted(async () => {
       });
     });
     tl.to(".svg", {
-      bottom: 89 + "%",
-      left: 2.5 + "rem",
+      bottom: 90 + "%",
+      left: 4 + "rem",
       y: 0 + "%",
       x: 0 + "%",
       width: 2.5 + "rem",
@@ -143,3 +145,11 @@ onMounted(async () => {
   });
 });
 </script>
+
+<style scoped>
+@media screen and (hover: none) {
+  .cursor-follower {
+    display: none !important;
+  }
+}
+</style>
