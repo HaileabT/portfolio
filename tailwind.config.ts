@@ -13,6 +13,7 @@ export default {
       dark: {
         "normal-text": "#e5edf2",
         bg: "#101010",
+        "bg-secondary": "#2c1aa1",
         "bg-lighter": "#231f1d",
         "header-text": "#a1d94f",
         "sub-header-text": "#cdbff0",

@@ -28,12 +28,36 @@
   <Projects />
   <Skills />
 
+  <Contact>
+    <div
+      v-html="logoContent"
+      class="w-10 md:w-20 lg:w-20 z-40 fill-dark-bg"
+    ></div>
+  </Contact>
+
   <div class="fixed bottom-5 right-5 lg:right-10 mix-blend-difference">
     <NuxtLink
-      to="/contact"
+      @click.prevent="
+        () => {
+          lenis?.scrollTo(`#contact`);
+        }
+      "
       class="pointer-grow lg:text-xl text-md text-dark-header-text"
       >Contact Me</NuxtLink
     >
+  </div>
+
+  <div class="py-5 px-5 bg-dark-bg-secondary text-dark-header-text text-center">
+    <h2>
+      Designed and implemented by
+      <a
+        href="https://www.github.com/haileabT"
+        target="_blank"
+        class="font-bold text-dark-sub-header-text pointer-grow"
+        >Haileab Tesfaye</a
+      >
+    </h2>
+    <p>2024</p>
   </div>
 </template>
 

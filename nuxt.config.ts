@@ -12,6 +12,14 @@ export default defineNuxtConfig({
           type: "image/svg+xml",
           href: process.env.LOGO_CLOUDINARY_URL || "",
         },
+        {
+          rel: "stylesheet",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css",
+          integrity:
+            "sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==",
+          crossorigin: "anonymous",
+          referrerpolicy: "no-referrer",
+        },
       ],
     },
   },
@@ -21,14 +29,26 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "@nuxt/icon",
-    "nuxt-svgo",
     "@nuxtjs/cloudinary",
+    [
+      "nuxt-mail",
+      {
+        message: {
+          to: process.env.EMAIL_USER,
+        },
+        smtp: {
+          service: "gmail",
+          auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASSWORD,
+          },
+        },
+      },
+    ],
+    "nuxt-mail",
   ],
   runtimeConfig: {
     logo_cloud_url: process.env.LOGO_CLOUDINARY_URL,
-  },
-  svgo: {
-    autoImportPath: "~/assets/svg/",
   },
   googleFonts: {
     display: "auto",
