@@ -145,7 +145,7 @@ const sendContactEmail = async () => {
       const response = await $fetch("/api/sendMail", {
         method: "POST",
         body: {
-          // from: name.value + " from " + email.value,
+          from: name.value + " from " + email.value,
           subject:
             "From " +
             email.value +

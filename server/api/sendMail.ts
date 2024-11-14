@@ -3,7 +3,7 @@ import { z } from "zod";
 import { AppError } from "~/util/AppError";
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event);
+  let body = await readBody(event);
 
   const contactSchema = z.object({
     from: z
@@ -32,6 +32,7 @@ export default defineEventHandler(async (event) => {
   const isBodySafe = await contactSchema.safeParseAsync(body);
 
   if (!isBodySafe.success) {
+    console.log(body.From);
     throw new AppError("Something wrong with your input.", 400);
   }
 
