@@ -1,9 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
-  plugins: ["~/plugins/rellax/rellax.client"],
+  plugins: [
+    "~/plugins/rellax/rellax.client",
+    "~/plugins/recaptcha/recaptcha.client",
+  ],
   ssr: true,
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
+  css: ["~/assets/css/tailwind.css"],
   app: {
     head: {
       link: [
@@ -24,8 +29,6 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "@nuxtjs/tailwindcss",
-    "nuxt3-lenis",
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "@nuxt/icon",
@@ -35,7 +38,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     emailUser: process.env.EMAIL_USER,
     emailPassword: process.env.EMAIL_PASSWORD,
-    logo_cloud_url: process.env.LOGO_CLOUDINARY_URL,
+    resendApiKey: process.env.RESEND_API_KEY,
+    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
+    public: {
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
+      logo_cloud_url: process.env.LOGO_CLOUDINARY_URL,
+    },
   },
   googleFonts: {
     display: "auto",
@@ -45,12 +53,7 @@ export default defineNuxtConfig({
       Poppins: true,
     },
   },
-  tailwindcss: {
-    cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
-    configPath: "tailwind.config.ts",
-    exposeConfig: {
-      level: 2,
-    },
-    viewer: true,
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

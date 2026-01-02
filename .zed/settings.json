@@ -1,0 +1,9 @@
+{
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "configFile": "frontend/.nuxt/eslint.config.mjs"
+      }
+    }
+  }
+}

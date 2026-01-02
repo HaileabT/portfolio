@@ -1,0 +1,93 @@
+<template>
+    <div
+        id="welcome"
+        class="w-full h-max bg-background flex justify-between p-8 shadow-2xl lg:px-20"
+    >
+        <div class="flex items-center gap-4">
+            <div
+                v-if="logoContent"
+                v-html="logoContent"
+                class="w-[1.8rem] h-[1.8rem] z-40 fill-secondary"
+            ></div>
+            <!-- <h4 class="text-primary w-max font-bold">Haileab Tesfaye</h4> -->
+        </div>
+        <nav class="w-full right-14 z-40 mix-blend-difference">
+            <div class="w-full flex gap-5 justify-end px-0 lg:px-4">
+                <NuxtLink
+                    v-for="link in links"
+                    :href="link.url"
+                    :key="link.url"
+                    @click.prevent="
+                        () => {
+                            $emit('linkClicked', link);
+                        }
+                    "
+                    class="pointer-grow relative group text-sm text-dark-normal-text text-tertiary transition-all"
+                    >{{ link.text }}
+                    <span
+                        class="absolute -bottom-0.5 left-0 w-0 bg-dark-header-text h-px group-hover:w-full transition-all"
+                    ></span>
+                </NuxtLink>
+            </div>
+        </nav>
+    </div>
+</template>
+
+<script setup lang="ts">
+interface NavBarLinks {
+    text: string;
+    url: string;
+}
+
+const logoContent = ref();
+
+const links: NavBarLinks[] = [
+    {
+        text: "Welcome",
+        url: "#welcome",
+    },
+    {
+        text: "Bio",
+        url: "#bio",
+    },
+    {
+        text: "Projects",
+        url: "#projects",
+    },
+    {
+        text: "Skills",
+        url: "#skills",
+    },
+];
+
+const emit = defineEmits(["linkClicked"]);
+
+const getLogo = async () => {
+    if (useRuntimeConfig().public.logo_cloud_url) {
+        logoContent.value = await $fetch(
+            useRuntimeConfig().public.logo_cloud_url,
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "text/html",
+                },
+            },
+        ).catch((error) => console.error(error));
+        logoContent.value = await logoContent.value.text();
+
+        logoContent.value = logoContent.value;
+    }
+};
+
+onMounted(() => {
+    getLogo();
+    setTimeout(() => {
+        const rellax = useNuxtApp().$rellaxInit();
+    }, 1);
+});
+
+onBeforeUnmount(() => {
+    useNuxtApp().$rellaxDestroy();
+    // getLogo();
+});
+</script>
