@@ -78,13 +78,5 @@ const getLogo = async () => {
 
 onMounted(() => {
     getLogo();
-    setTimeout(() => {
-        const rellax = useNuxtApp().$rellaxInit();
-    }, 1);
-});
-
-onBeforeUnmount(() => {
-    useNuxtApp().$rellaxDestroy();
-    // getLogo();
 });
 </script>

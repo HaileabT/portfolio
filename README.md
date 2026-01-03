@@ -20,10 +20,6 @@ This is my portfolio website I built from scratch with Nuxt 3, showcasing my ski
 
 [Tailwind](https://tailwindcss.com/)
 
-[GSAP](https://gsap.com/): This is what I used to animate most stuff.
-
-[Rellax](https://dixonandmoe.com/rellax/): I used this to add parallax scroll effect.
-
 [nuxt3-lenis](https://github.com/benoitdelorme/nuxt3-lenis): This is a very nice library to add smooth scroll to your projects.
 
 [Google Fonts for Nuxt 3](https://google-fonts.nuxtjs.org/)
@@ -51,5 +47,4 @@ pnpm dev
 
 [MIT](https://github.com/HaileabT/portfolio/blob/master/LICENSE)
 
-Read the LICENSE file for more attribution rules. 
-
+Read the LICENSE file for more attribution rules.

@@ -1,6 +1,5 @@
 <template>
     <div class="w-full h-svh bg-background overflow-x-hidden">
-        <!-- <VueReCaptcha /> -->
         <NuxtPage />
     </div>
 </template>
@@ -15,7 +14,7 @@ useHead({
         {
             name: "keywords",
             content:
-                "Haileab Tesfaye, Portfolio, Website, Nuxtjs, Nuxt, Vue, GSAP, Lenis, Nodejs, Go, Typescript, JavaScript, HTML, CSS",
+                "Haileab Tesfaye, Portfolio, Website, Nuxtjs, Nuxt, Vue, Lenis, Nodejs, Go, Typescript, JavaScript, HTML, CSS",
         },
         {
             name: "author",

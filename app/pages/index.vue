@@ -74,8 +74,6 @@
 </template>
 
 <script setup lang="ts">
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 const logoContent = ref();
 
 const { socials } = useSocials();
@@ -92,88 +90,8 @@ onMounted(async () => {
             },
         ).catch((error) => console.error(error));
         logoContent.value = await logoContent.value.text();
-        // console.log(logoContent.value);
         logoContent.value = logoContent.value;
     }
-    setTimeout(() => {
-        return;
-        // lenis.value.on("scroll", ScrollTrigger.update);
-
-        gsap.registerPlugin(ScrollTrigger);
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".svg",
-                start: "10% 30%",
-                end: "500% 10%",
-                scrub: true,
-                markers: false,
-            },
-        });
-        const tl1 = gsap.timeline();
-
-        if (window.scrollY >= 200) {
-            tl1.to(".svg", {
-                bottom: 90 + "%",
-                left: 4 + "rem",
-                y: 0 + "%",
-                x: 0 + "%",
-                width: 2.5 + "rem",
-                height: 2.5 + "rem",
-                ease: "ease.out",
-            }).eventCallback("onComplete", () => {
-                ScrollTrigger.refresh();
-                ScrollTrigger.update();
-                tl1.clear();
-            });
-        }
-
-        document.addEventListener("mousemove", (e) => {
-            // console.log(document.elementFromPoint(e.x, e.y));
-            if (
-                document
-                    .elementFromPoint(e.clientX, e.clientY)
-                    ?.classList.contains("pointer-grow")
-            ) {
-                gsap.to("#cursor-follower", {
-                    scale: 4.3,
-                    duration: 0.2,
-                    ease: "ease.inOut",
-                });
-            } else if (
-                document
-                    .elementFromPoint(e.clientX, e.clientY)
-                    ?.classList.contains("pointer-grow-special")
-            ) {
-                gsap.to("#cursor-follower", {
-                    scale: 150,
-                    duration: 1,
-                    ease: "none",
-                });
-            } else {
-                gsap.to("#cursor-follower", {
-                    scale: 1,
-                    duration: 0.2,
-                    ease: "else.inOut",
-                });
-            }
-            gsap.to("#cursor-follower", {
-                left: e.clientX,
-                top: e.clientY,
-                overflow: "auto",
-                duration: 0.2,
-                ease: "none",
-            });
-        });
-        tl.to(".svg", {
-            bottom: 90 + "%",
-            left: 4 + "rem",
-            y: 0 + "%",
-            x: 0 + "%",
-            width: 2.5 + "rem",
-            height: 2.5 + "rem",
-            ease: "ease.out",
-        });
-    });
 });
 </script>
 
