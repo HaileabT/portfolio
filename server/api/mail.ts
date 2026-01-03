@@ -18,12 +18,7 @@ const contactSchema = z.object({
     .trim()
     .min(1, "From too short")
     .max(200, "From string to long."),
-  subject: z
-    .string()
-    .trim()
-    .min(1, "Subject too short")
-    .max(200, "Subject to long."),
-  text: z
+  message: z
     .string()
     .trim()
     .min(1, "Message is too short.")
@@ -34,8 +29,8 @@ const contactSchema = z.object({
 contactSchema.required({
   name: true,
   from: true,
-  subject: true,
-  text: true,
+  message: true,
+  recaptchaToken: true,
 });
 
 export default defineEventHandler(async (event) => {
@@ -52,10 +47,10 @@ export default defineEventHandler(async (event) => {
     `https://www.google.com/recaptcha/api/siteverify`,
     {
       method: "POST",
-      body: {
-        secret: useRuntimeConfig().recaptchaSecretKey,
-        response: recaptchaToken,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
       },
+      body: `secret=${useRuntimeConfig().recaptchaSecretKey}&response=${recaptchaToken}`,
     },
   );
 
@@ -97,11 +92,13 @@ export default defineEventHandler(async (event) => {
   const mailer = new Resend(useRuntimeConfig().resendApiKey);
 
   const mailOptions = {
-    from: `${body.name} through portfolio <career@haileabtesfaye.dev>`,
+    from: `${isBodySafe.data.name} through portfolio <career@haileabtesfaye.dev>`,
     to: useRuntimeConfig().emailUser,
     tags: [{ name: "Media", value: "Portfolio" }],
-    subject: body.subject,
-    text: body.text,
+    subject: `${isBodySafe.data.name} wants to work with you`,
+    text: `${isBodySafe.data.name} with ${isBodySafe.data.from} says:
+    "${isBodySafe.data.message}"
+    `,
   } as CreateEmailOptions;
 
   try {

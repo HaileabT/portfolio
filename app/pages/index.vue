@@ -25,13 +25,11 @@
             <div class="bg-background py-2">
                 <Barrier />
             </div>
-            <div
-                class="fixed bottom-5 right-5 lg:right-10 mix-blend-difference"
-            >
-                <NuxtLink
-                    to="#contact"
-                    class="pointer-grow lg:text-xl text-md text-dark-header-text"
-                    >Contact Me</NuxtLink
+            <div class="fixed bottom-5 right-5 lg:right-10">
+                <a
+                    href="#contact"
+                    class="pointer-grow lg:text-xl text-md text-background bg-primary"
+                    >Contact Me</a
                 >
             </div>
 

@@ -6,7 +6,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     siteKey: useRuntimeConfig().public.recaptchaSiteKey, // Replace with your site key
 
     loaderOptions: {
-      autoHideBadge: false, // Optional: Automatically hides the badge
+      autoHideBadge: true, // Optional: Automatically hides the badge
 
       explicitRenderParameters: {
         //badge: 'bottomleft', //incase you don't want to hide it

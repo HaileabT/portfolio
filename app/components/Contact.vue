@@ -161,10 +161,7 @@ const sendContactEmail = async () => {
                 body: {
                     name: name.value,
                     from: email.value,
-                    subject: `${name.value} wants to work with you`,
-                    text: `${name.value} with ${email.value} says:
-                    "${message.value}"
-                    `,
+                    message: message.value,
                     recaptchaToken: token,
                 },
             });

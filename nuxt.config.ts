@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   plugins: [
     "~/plugins/rellax/rellax.client",
-    "~/plugins/recaptcha/recaptcha.client",
+    { src: "~/plugins/recaptcha/recaptcha.client", mode: "client" },
   ],
   ssr: true,
   compatibilityDate: "2024-04-03",

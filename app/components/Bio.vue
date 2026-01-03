@@ -49,5 +49,5 @@
 const { education } = useEducation();
 const aboutMe = "A Backend Developer with Fullstack Experience.";
 const shortDescription =
-    "I'm a versatile developer specializing in backend developer.";
+    "I'm a versatile developer specializing in backend engineering.";
 </script>
