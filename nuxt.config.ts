@@ -1,7 +1,10 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  plugins: [{ src: "~/plugins/recaptcha.client", mode: "client" }],
+  plugins: [
+    { src: "~/plugins/lenis.client", mode: "client" },
+    { src: "~/plugins/recaptcha.client", mode: "client" },
+  ],
   ssr: true,
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
@@ -30,8 +33,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/icon",
     "@nuxtjs/cloudinary",
+    "lenis/nuxt",
   ],
-
   runtimeConfig: {
     emailUser: process.env.EMAIL_USER,
     emailPassword: process.env.EMAIL_PASSWORD,

@@ -1,10 +1,25 @@
 <template>
-    <div class="w-full h-svh bg-background overflow-x-hidden">
-        <NuxtPage />
-    </div>
+    <VueLenis
+        class="h-svh"
+        root
+        :options="{
+            smoothWheel: true,
+            autoRaf: true,
+            lerp: 0.1,
+            wheelMultiplier: 0.8,
+        }"
+    >
+        <div class="w-full h-full bg-background overflow-x-hidden">
+            <NuxtPage />
+        </div>
+    </VueLenis>
 </template>
 
 <script setup lang="ts">
+import { useLenis } from "lenis/vue";
+
+const lenis = useLenis();
+
 useHead({
     title: "Haileab Tesfaye",
     htmlAttrs: {
@@ -44,4 +59,12 @@ useSeoMeta({
     charset: "utf-8",
     viewport: "width=device-width, initial-scale=1",
 });
+
+watch(
+    lenis,
+    () => {
+        console.log("Lenis instance updated");
+    },
+    { immediate: true },
+);
 </script>
