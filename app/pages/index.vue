@@ -104,12 +104,12 @@ useHead({
 
 useSeoMeta({
     ogTitle: "Haileab Tesfaye",
-    ogImage: "/og-image.png",
+    ogImage: "/preview.jpg",
     ogImageAlt: "Haileab Tesfaye",
     ogSiteName: "Haileab Tesfaye",
     ogDescription: "I'm Haileab Tesfaye; A Backend Developer.",
     twitterTitle: "Haileab Tesfaye",
-    twitterImage: "/og-image.png",
+    twitterImage: "/preview.jpg",
     twitterImageAlt: "Haileab Tesfaye",
     twitterSite: "@haileabtesfaye",
     twitterCreator: "@haileabtesfaye",
