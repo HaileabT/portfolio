@@ -13,6 +13,15 @@
             <NuxtPage />
         </div>
     </VueLenis>
+
+    <noscript
+        ><iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5NBV7B6F"
+            height="0"
+            width="0"
+            style="display: none; visibility: hidden"
+        ></iframe
+    ></noscript>
 </template>
 
 <script setup lang="ts">
