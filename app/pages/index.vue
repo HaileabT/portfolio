@@ -89,16 +89,33 @@ useHead({
         {
             name: "keywords",
             content:
-                "Haileab Tesfaye, Portfolio, Website, Nuxtjs, Nuxt, Vue, GSAP, Lenis",
+                "Haileab Tesfaye, Portfolio, Website, Nuxtjs, Nuxt, Vue, GSAP, Lenis, Nodejs, Go, Typescript, JavaScript, HTML, CSS",
+        },
+        {
+            name: "author",
+            content: "Haileab Tesfaye",
+        },
+        {
+            name: "description",
+            content: "I'm Haileab Tesfaye; A Backend Developer.",
         },
     ],
 });
 
 useSeoMeta({
     ogTitle: "Haileab Tesfaye",
-    ogDescription: "Haileab Tesfaye's portfolio",
+    ogImage: "/og-image.png",
+    ogImageAlt: "Haileab Tesfaye",
+    ogSiteName: "Haileab Tesfaye",
+    ogDescription: "I'm Haileab Tesfaye; A Backend Developer.",
+    twitterTitle: "Haileab Tesfaye",
+    twitterImage: "/og-image.png",
+    twitterImageAlt: "Haileab Tesfaye",
+    twitterSite: "@haileabtesfaye",
+    twitterCreator: "@haileabtesfaye",
+    twitterCard: "summary_large_image",
     author: "Haileab Tesfaye",
-    description: "Haileab Tesfaye's portfolio.",
+    description: "I'm Haileab Tesfaye; A Backend Developer.",
     charset: "utf-8",
     viewport: "width=device-width, initial-scale=1",
 });
