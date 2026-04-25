@@ -61,7 +61,9 @@ export default defineNuxtConfig({
     // stylePath: "~/assets/css/google-fonts.css",
     // fontsPath: "~/assets/fonts",
     families: {
-      Poppins: true,
+      "Space Mono": true,
+      "Luckiest Guy": true,
+      Righteous: true
     },
   },
   vite: {

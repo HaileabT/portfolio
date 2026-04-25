@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #9f956c;
-    --color-secondary: #53a2be;
-    --color-tertiary: #bbb;
+    --color-primary: var(--color-primary);
+    --color-secondary: var(--color-secondary);
+    --color-tertiary: var(--color-tertiary);
 
-    --color-background: #06070e;
+    --color-background: var(--color-background);
+    --color-card: var(--color-card);
+
+    --font-primary: var(--font-primary)
 }
 
 * {
@@ -15,10 +18,13 @@
 
 :root {
     --color-primary: #9f956c;
-    --color-secondary: #53a2be;
+    --color-secondary: #ff2a00;
     --color-tertiary: #bbb;
 
     --color-background: #06070e;
+    --color-card: #0d0e1c;
+
+    --font-primary: "Space Mono"
 }
 
 html.lenis,

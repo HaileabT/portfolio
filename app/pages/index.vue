@@ -1,86 +1,67 @@
 <template>
-    <div>
+    <div class="flex gap-4 bg-background w-svw h-svh">
         <div
-            tabindex="-1"
-            id="cursor-follower"
-            class="pointer-events-none cursor-follower fixed bg-background z-5000 mix-blend-difference translate-x-[-50%] translate-y-[-50%] w-5 h-5 rounded-full"
-        ></div>
-        <div id="svg-container" class="svg-container bg-background">
-            <Header
-                @link-clicked="
-                    (link) => {
-                        useRouter().push(link.url);
-                    }
-                "
-            />
-        </div>
-        <div class="flex flex-col gap-5 bg-background">
-            <Barrier />
-            <Bio />
-            <Projects class="bg-background" />
-            <Skills />
+            class="bg-card w-1/3 p-8 flex flex-col justify-center gap-8 text-primary">
+            <div class="flex flex-col w-max">
 
-            <Contact />
-
-            <div class="bg-background py-2">
-                <Barrier />
-            </div>
-            <div class="fixed bottom-5 right-5 lg:right-10">
-                <a
-                    href="#contact"
-                    class="pointer-grow lg:text-xl text-md text-background bg-primary"
-                    >Contact Me</a
-                >
-            </div>
-
-            <div class="py-5 px-5 bg-primary text-center">
-                <h2>
-                    Designed and implemented by
-                    <a
-                        href="https://www.github.com/haileabT"
-                        target="_blank"
-                        class="font-bold text-dark-sub-header-text pointer-grow"
-                        >Haileab Tesfaye</a
-                    >
-                </h2>
-                <div
-                    class="flex gap-5 justify-center items-baseline row-start-2 md:row-start-1 py-2"
-                >
-                    <div>
-                        <div
-                            v-if="logoContent"
-                            v-html="logoContent"
-                            class="w-13 z-40 fill-background border-r-2 border-r-background pr-5"
-                        ></div>
+                <div class="w-full">
+                    <div v-if="logoContent" v-html="logoContent"
+                        class="fill-secondary w-10">
                     </div>
-                    <ul class="flex gap-3">
-                        <li
-                            v-for="social in socials"
-                            class="pointer-grow hover-effect-li"
-                        >
-                            <NuxtLink :href="social.link" target="_blank"
-                                ><i
-                                    :class="`${social.fontawesomeClass}`"
-                                    class="text-xl md:text-3x text-background hover:text-tertiary"
-                                ></i
-                            ></NuxtLink>
-                        </li>
-                    </ul>
+
                 </div>
-                <p>{{ new Date().getFullYear() }}</p>
+                <div class="w-full my-4">
+                    <h1 class="text-2xl font-bold mb-0 pb-0">haileab tesfaye
+                    </h1>
+                    <p class="mt-0 pt-0">a fullstack dev</p>
+                </div>
+                <div v-if="socials && socials.length > 0"
+                    class="flex w-full gap-2 text-secondary self-start">
+                    <div v-for="s of socials" :key="s.link">
+                        <NuxtLink :href="s.link" target="_blank">
+                            <i :class="s.fontawesomeClass"
+                                class="text-secondary text-lg hover:text-primary"
+                                :title="s.site" />
+                        </NuxtLink>
+                    </div>
+                </div>
             </div>
+
+            <div class="w-full">
+                <h2 class="text-primary/70 w-full">a little about me</h2>
+                <p class="text-tertiary">I'm a backend focused fullstack
+                    developer. If thats what you are looking for, hit me up and
+                    let's work together.
+                </p>
+            </div>
+
+            <div class="full">
+                <div class="w-full h-px bg-secondary"></div>
+                <p class="text-center text-tertiary/60 px-2 py-4">designed and
+                    developed by
+                    <NuxtLink href="github.com/haileabt" class="text-secondary">
+                        Haileab Tesfaye</NuxtLink>
+                </p>
+                <p class="text-center text-tertiary/60 px-2 py-4"> {{ new
+                    Date().getFullYear() }}
+                </p>
+            </div>
+        </div>
+        <div>
+
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-const logoContent = ref();
+const logoContent = ref<string>();
 
 const { socials } = useSocials();
 
 onMounted(async () => {
     if (useRuntimeConfig().public.logo_cloud_url) {
-        logoContent.value = await $fetch(
+        console.log("logo url", useRuntimeConfig().public.logo_cloud_url)
+        const res = await $fetch<any>(
             useRuntimeConfig().public.logo_cloud_url,
             {
                 method: "GET",
@@ -89,8 +70,8 @@ onMounted(async () => {
                 },
             },
         ).catch((error) => console.error(error));
-        logoContent.value = await logoContent.value.text();
-        logoContent.value = logoContent.value;
+        if (!res) return;
+        logoContent.value = await res.text();
     }
 });
 </script>

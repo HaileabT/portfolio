@@ -20,6 +20,11 @@ export const useSocials = () => {
       link: "https://t.me/vividream88",
       fontawesomeClass: "fa-brands fa-telegram",
     },
+    {
+      site: "Google",
+      link: 'mailto:haileabtesfaye11@gmail.com',
+      fontawesomeClass: "fa-brands fa-google"
+    }
   ]);
 
   return {

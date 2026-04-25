@@ -1,27 +1,19 @@
 <template>
-    <VueLenis
-        class="h-svh"
-        root
-        :options="{
-            smoothWheel: true,
-            autoRaf: true,
-            lerp: 0.1,
-            wheelMultiplier: 0.8,
-        }"
-    >
-        <div class="w-full h-full bg-background overflow-x-hidden">
+    <VueLenis root :options="{
+        smoothWheel: true,
+        autoRaf: true,
+        lerp: 0.1,
+        wheelMultiplier: 0.8,
+    }">
+        <div class="w-full h-full bg-background overflow-x-hidden font-primary">
             <NuxtPage />
         </div>
     </VueLenis>
 
-    <noscript
-        ><iframe
+    <noscript><iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5NBV7B6F"
-            height="0"
-            width="0"
-            style="display: none; visibility: hidden"
-        ></iframe
-    ></noscript>
+            height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
 </template>
 
 <script setup lang="ts">
@@ -53,12 +45,12 @@ useHead({
 
 useSeoMeta({
     ogTitle: "Haileab Tesfaye",
-    ogImage: "https://career.haileabtesfaye.dev/preview.jpg",
+    ogImage: "https://haileabtesfaye.dev/preview.jpg",
     ogImageAlt: "Haileab Tesfaye",
     ogSiteName: "Haileab Tesfaye",
     ogDescription: "I'm Haileab Tesfaye; A Backend Developer.",
     twitterTitle: "Haileab Tesfaye",
-    twitterImage: "https://career.haileabtesfaye.dev/preview.jpg",
+    twitterImage: "https://haileabtesfaye.dev/preview.jpg",
     twitterImageAlt: "Haileab Tesfaye",
     twitterSite: "@haileabtesfaye",
     twitterCreator: "@haileabtesfaye",
