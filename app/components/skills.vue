@@ -1,24 +1,46 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <div class="w-full flex gap-8 flex-wrap justify-center">
-
-      <div v-for="s of coreSkills" :key="s.key"
-        class="border-none bg-none text-primary p-4 flex flex-col items-center">
-        <div v-html="s.svg" :title="s.title"></div>
-        <NuxtLink href="#" class="text-secondary hover:underline"
-          target="_blank">
-          {{ s.title }}
-        </NuxtLink>
-      </div>
+  <div>
+    <div
+      class="flex xl:hidden gap-16 justify-between max-w-[500px] w-full">
+      <ul
+        class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
+        <li v-for="s of coreSkills" :key="s.key"
+          class="text-tertiary">
+          {{ s.title }}</li>
+      </ul>
+      <ul
+        class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
+        <li v-for="s of toolSkills" :key="s.key"
+          class="text-tertiary">
+          {{ s.title }}</li>
+      </ul>
     </div>
-    <div class="w-full flex gap-8 flex-wrap justify-center">
-      <div v-for="s of toolSkills" :key="s.key"
-        class="border-none bg-none text-primary p-4 flex flex-col items-center">
-        <div v-html="s.svg" :title="s.title"></div>
-        <NuxtLink href="#" class="text-secondary hover:underline"
-          target="_blank">
-          {{ s.title }}
-        </NuxtLink>
+    <div
+      class="flex-col gap-4 text-sm hidden xl:flex">
+      <div
+        class="w-full flex gap-8 flex-wrap justify-center">
+
+        <div v-for="s of coreSkills" :key="s.key"
+          class="border-none bg-none text-primary p-4 flex flex-col items-center">
+          <div v-html="s.svg" :title="s.title"
+            :class="s.title === 'React.js' ? 'hover:animate-spin' : ''">
+          </div>
+          <li class="text-secondary list-none">
+            {{ s.title }}
+          </li>
+        </div>
+      </div>
+      <div
+        class="w-full flex gap-8 flex-wrap justify-center">
+        <div v-for="s of toolSkills" :key="s.key"
+          class="border-none bg-none text-primary p-4 flex flex-col items-center">
+
+          <div v-html="s.svg" :title="s.title">
+          </div>
+          <li class="text-secondary list-none">
+            {{ s.title }}
+          </li>
+        </div>
       </div>
     </div>
   </div>

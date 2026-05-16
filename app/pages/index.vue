@@ -1,7 +1,8 @@
 <template>
-    <div class="flex gap-4 w-svw h-svh">
+    <div
+        class="flex flex-col xl:flex-row gap-4 w-svw xl:h-svh">
         <div
-            class="bg-black w-1/3 max-w-[500px] min-w-[350px] p-8 flex flex-col justify-center gap-8 text-primary">
+            class="bg-black w-full xl:w-1/3 max-w-[924px] mx-auto xl:mx-0 xl:max-w-[500px] xl:min-w-[350px] px-4 py-8 xl:p-8 flex flex-col justify-center gap-8 text-primary">
             <div class="flex flex-col w-max">
 
                 <div class="w-full">
@@ -45,7 +46,7 @@
                 </p>
             </div>
 
-            <div class="full">
+            <div class="xl:block hidden w-full">
                 <div
                     class="w-full h-px bg-secondary">
                 </div>
@@ -85,6 +86,24 @@
                     skills</h2>
                 <Skills />
             </div>
+        </div>
+
+        <div
+            class="flex flex-col justify-end xl:hidden w-full bg-black ">
+            <p
+                class="text-center text-tertiary/60 px-2 py-4 text-xs">
+                designed and
+                developed by
+                <NuxtLink target="_blank"
+                    href="https://github.com/haileabt"
+                    class="text-secondary">
+                    Haileab Tesfaye</NuxtLink>
+            </p>
+            <p
+                class="text-center text-tertiary/60 px-2 pb-2 text xs">
+                {{ new
+                    Date().getFullYear() }}
+            </p>
         </div>
     </div>
 </template>
