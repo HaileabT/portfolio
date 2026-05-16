@@ -74,12 +74,12 @@
                     experience</h2>
                 <Experience />
             </div>
-            <!-- <div class="w-full max-w-[900px]">
+            <div class="w-full max-w-[900px]">
                 <h2
                     class="text-card mb-4 text-xl font-bold bg-primary px-2 w-max">
                     projects</h2>
                 <Projects />
-            </div> -->
+            </div>
             <div class="w-full max-w-[900px]">
                 <h2
                     class="text-background mb-4 text-xl font-bold bg-primary px-2 w-max">

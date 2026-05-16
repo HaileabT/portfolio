@@ -3,12 +3,12 @@
     <div v-for="e of experience" :key="e.key"
       class="border-primary/40 bg-black text-primary border-[1px] p-4 w-full">
       <h3 class="text-primary text-lg">{{ e.title
-      }}</h3>
+        }}</h3>
       <p class="text-tertiary/80">{{ e.description
-      }}</p>
+        }}</p>
       <div
         v-if="e.resources && e.resources.length > 0">
-        <h3 class="mt-4">Resources</h3>
+        <h3 class="mt-4">resources</h3>
         <NuxtLink v-for="r of e.resources"
           :key="r.key" :href="r.url"
           target="_blank"
