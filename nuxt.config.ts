@@ -35,12 +35,19 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: [
-    "@nuxtjs/google-fonts",
-    "@nuxt/image",
-    "@nuxt/icon",
-    "@nuxtjs/cloudinary",
-  ],
+  modules: ["@nuxtjs/google-fonts", "@nuxt/image", "@nuxt/icon", "@nuxtjs/cloudinary", "@nuxtjs/sitemap", "@nuxtjs/robots"],
+
+  sitemap: {
+    urls: ["https://www.haileabtesfaye.dev"],
+    sitemapName: "htps.xml",
+    enabled: true,
+  },
+  robots: {
+    sitemap: "htps.xml",
+    blockAiBots: false,
+    enabled: true,
+    metaTag: true,
+  },
   runtimeConfig: {
     emailUser: process.env.EMAIL_USER,
     emailPassword: process.env.EMAIL_PASSWORD,
@@ -64,4 +71,9 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  nitro: {
+    prerender: {
+      routes: ["/"]
+    }
+  }
 });

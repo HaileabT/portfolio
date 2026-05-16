@@ -15,6 +15,8 @@
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/cloudinary": "^4.0.0",
     "@nuxtjs/google-fonts": "3.2.0",
+    "@nuxtjs/robots": "6.0.8",
+    "@nuxtjs/sitemap": "^8.0.15",
     "@tailwindcss/vite": "^4.1.18",
     "nuxi": "^3.31.3",
     "nuxt": "^4.2.2",
