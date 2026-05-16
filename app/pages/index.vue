@@ -67,7 +67,7 @@
             </div>
         </div>
         <div
-            class="w-full bg-[rgb(10,10,10)] p-4 xl:py-16 flex flex-col items-center gap-8 overflow-y-auto">
+            class="w-full bg-card p-4 xl:py-16 flex flex-col items-center gap-8 overflow-y-auto">
             <div class="w-full max-w-[900px]">
                 <h2
                     class="text-card mb-4 text-xl font-bold bg-primary px-2 w-max">

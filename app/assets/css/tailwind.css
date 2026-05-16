@@ -21,8 +21,8 @@
     --color-secondary: #ff2a00;
     --color-tertiary: #bbb;
 
-    --color-background: #06070e;
-    --color-card: #0d0e1c;
+    --color-background: rgb(0, 0, 0);
+    --color-card: rgb(10,10,10);
 
     --font-primary: "Space Mono"
 }
