@@ -1,14 +1,15 @@
 <template>
-    <VueLenis root :options="{
+    <!-- <VueLenis root :options="{
         smoothWheel: true,
         autoRaf: true,
         lerp: 0.1,
         wheelMultiplier: 0.8,
-    }">
-        <div class="w-full h-full bg-background overflow-x-hidden font-primary">
-            <NuxtPage />
-        </div>
-    </VueLenis>
+    }"> -->
+    <div
+        class="w-full h-full bg-black overflow-x-hidden font-primary">
+        <NuxtPage />
+    </div>
+    <!-- </VueLenis> -->
 
     <noscript><iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5NBV7B6F"
@@ -17,9 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import { useLenis } from "lenis/vue";
-
-const lenis = useLenis();
 
 useHead({
     title: "Haileab Tesfaye",
@@ -60,12 +58,4 @@ useSeoMeta({
     charset: "utf-8",
     viewport: "width=device-width, initial-scale=1",
 });
-
-watch(
-    lenis,
-    () => {
-        console.log("Lenis instance updated");
-    },
-    { immediate: true },
-);
 </script>
