@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col gap-4">
     <div v-for="e of experience" :key="e.key"
-      class="border-primary/40 bg-black text-primary border-[1px] p-4 w-full">
+      class="border-primary/60 bg-black text-primary border-[1px] p-4 w-full">
       <h3 class="text-primary text-lg">{{ e.title
         }}</h3>
       <p class="text-tertiary/80">{{ e.description
