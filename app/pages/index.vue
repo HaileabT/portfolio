@@ -38,9 +38,9 @@
                 <h2
                     class="text-primary/70 w-full">
                     a little about me</h2>
-                <p class="text-tertiary">I'm a
+                <p class="text-tertiary">i'm a
                     backend focused fullstack
-                    developer. If thats what you
+                    developer. if thats what you
                     are looking for, hit me up and
                     let's work together.
                 </p>
@@ -51,16 +51,16 @@
                     class="w-full h-px bg-secondary">
                 </div>
                 <p
-                    class="text-center text-tertiary/60 px-2 py-4">
+                    class="text-center text-tertiary/60 px-2 py-4 xl:pb-1">
                     designed and
                     developed by
                     <NuxtLink target="_blank"
                         href="https://github.com/haileabt"
                         class="text-secondary">
-                        Haileab Tesfaye</NuxtLink>
+                        haileab tesfaye</NuxtLink>
                 </p>
                 <p
-                    class="text-center text-tertiary/60 px-2 py-4">
+                    class="text-center text-tertiary/60 px-2 py-0 text-sm">
                     {{ new
                         Date().getFullYear() }}
                 </p>

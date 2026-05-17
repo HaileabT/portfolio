@@ -2,14 +2,16 @@
   <div class="w-full flex flex-col gap-4">
     <div v-for="e of experience" :key="e.key"
       class="relative border-primary/50 bg-black text-primary border-[1px] p-4 w-full">
-      <h3 class="text-primary text-lg">{{ e.title
-      }}</h3>
-      <p class="text-tertiary/80">{{ e.description
-      }}</p>
+      <h3 class="text-primary text-lg">{{
+        e.title.toLowerCase()
+        }}</h3>
+      <p class="text-tertiary/80">{{
+        e.description.toLowerCase()
+        }}</p>
       <p
         class="bg-primary w-max top-0 right-0 font-bold text-card px-2 absolute">
         {{
-          (e.progress).toUpperCase() }}</p>
+          (e.progress).toLocaleLowerCase() }}</p>
       <p v-if="e.tech"
         class="flex gap-2 mt-2 xl:flex-wrap max-w-[100%] overflow-x-scroll">
         <span
@@ -24,7 +26,7 @@
           :key="r.key" :href="r.url"
           target="_blank"
           class="text-secondary hover:underline">-
-          {{ r.title }}
+          {{ r.title.toLowerCase() }}
         </NuxtLink>
       </div>
     </div>

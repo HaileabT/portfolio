@@ -6,13 +6,13 @@
         class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
         <li v-for="s of coreSkills" :key="s.key"
           class="text-tertiary text-[0.9rem]! sm:text-base! md:text-lg! lg:text-xl!">
-          {{ s.title }}</li>
+          {{ s.title.toLowerCase() }}</li>
       </ul>
       <ul
         class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
         <li v-for="s of toolSkills" :key="s.key"
           class="text-tertiary text-[0.9rem]! sm:text-base! md:text-lg! lg:text-xl!">
-          {{ s.title }}</li>
+          {{ s.title.toLowerCase() }}</li>
       </ul>
     </div>
     <div
@@ -26,7 +26,7 @@
             :class="s.title === 'React.js' ? 'hover:animate-spin' : ''">
           </div>
           <li class="text-secondary list-none">
-            {{ s.title }}
+            {{ s.title.toLowerCase() }}
           </li>
         </div>
       </div>
@@ -38,7 +38,7 @@
           <div v-html="s.svg" :title="s.title">
           </div>
           <li class="text-secondary list-none">
-            {{ s.title }}
+            {{ s.title.toLowerCase() }}
           </li>
         </div>
       </div>

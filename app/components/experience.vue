@@ -2,9 +2,11 @@
   <div class="w-full flex flex-col gap-4">
     <div v-for="e of experience" :key="e.key"
       class="border-primary/60 bg-black text-primary border-[1px] p-4 w-full">
-      <h3 class="text-primary text-lg">{{ e.title
+      <h3 class="text-primary text-lg">{{
+        e.title.toLowerCase()
         }}</h3>
-      <p class="text-tertiary/80">{{ e.description
+      <p class="text-tertiary/80">{{
+        e.description.toLowerCase()
         }}</p>
       <div
         v-if="e.resources && e.resources.length > 0">
@@ -13,7 +15,7 @@
           :key="r.key" :href="r.url"
           target="_blank"
           class="text-secondary hover:underline">-
-          {{ r.title }}
+          {{ r.title.toLowerCase() }}
         </NuxtLink>
       </div>
     </div>
