@@ -5,13 +5,13 @@
       <ul
         class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
         <li v-for="s of coreSkills" :key="s.key"
-          class="text-tertiary">
+          class="text-tertiary text-[0.9rem]! sm:text-base! md:text-lg! lg:text-xl!">
           {{ s.title }}</li>
       </ul>
       <ul
         class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
         <li v-for="s of toolSkills" :key="s.key"
-          class="text-tertiary">
+          class="text-tertiary text-[0.9rem]! sm:text-base! md:text-lg! lg:text-xl!">
           {{ s.title }}</li>
       </ul>
     </div>

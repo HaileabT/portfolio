@@ -10,7 +10,8 @@
         class="bg-primary w-max top-0 right-0 font-bold text-card px-2 absolute">
         {{
           (e.progress).toUpperCase() }}</p>
-      <p v-if="e.tech" class="flex gap-2 mt-2">
+      <p v-if="e.tech"
+        class="flex gap-2 mt-2 xl:flex-wrap max-w-[100%] overflow-x-scroll">
         <span
           class="bg-tertiary/30 text-tertiary font-bold px-1"
           v-for="t of e.tech" :key="t">{{ t
