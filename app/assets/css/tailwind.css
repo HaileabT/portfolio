@@ -51,3 +51,9 @@ html.lenis body {
 body {
     overflow-x: hidden;
 }
+
+@layer base {
+    html, body {
+        @apply !bg-background;
+    }
+}
