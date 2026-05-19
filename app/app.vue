@@ -5,8 +5,12 @@
         lerp: 0.1,
         wheelMultiplier: 0.8,
     }"> -->
-    <div
-        class="w-full h-full bg-black overflow-x-hidden font-primary">
+    <div class="w-full h-full bg-background overflow-x-hidden font-primary"
+        :class="`${theme}`">
+        <button
+            class="fixed top-2 right-2 bg-secondary px-2 cursor-pointer flex justify-center min-w-[80px] border-black border"
+            @click="toggleTheme">{{ dark
+                ? "light" : "dark" }}</button>
         <NuxtPage />
     </div>
     <!-- </VueLenis> -->
@@ -18,6 +22,16 @@
 </template>
 
 <script setup lang="ts">
+const dark = ref(true);
+
+const theme = computed(() => {
+    if (dark.value) return "dark";
+    else ""
+})
+
+const toggleTheme = () => {
+    dark.value = !dark.value;
+}
 
 useHead({
     title: "Haileab Tesfaye",

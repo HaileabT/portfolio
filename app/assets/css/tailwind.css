@@ -16,7 +16,17 @@
     scroll-behavior: smooth;
 }
 
+
 :root {
+    --color-primary: rgb(0, 0, 0);
+    --color-secondary: #ff2a00;
+    --color-tertiary: rgb(10,10,10);
+    --color-background: #9f956c;
+    --color-card: #bbb;
+    --font-primary: "Space Mono"
+}
+
+.dark {
     --color-primary: #9f956c;
     --color-secondary: #ff2a00;
     --color-tertiary: #bbb;
@@ -50,6 +60,15 @@ html.lenis body {
 
 body {
     overflow-x: hidden;
+}
+
+.dark .conditional-border {
+    border: none;
+
+}
+
+.conditional-border {
+    @apply border-primary xl:border-r-[1px]
 }
 
 @layer base {

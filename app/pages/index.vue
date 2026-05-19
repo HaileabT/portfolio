@@ -1,8 +1,8 @@
 <template>
     <div
-        class="flex flex-col xl:flex-row gap-4 w-svw xl:h-svh">
+        class="flex flex-col xl:flex-row w-svw xl:h-svh">
         <div
-            class="bg-black w-full xl:w-1/3 max-w-[924px] mx-auto xl:mx-0 xl:max-w-[500px] xl:min-w-[350px] px-4 py-8 xl:p-8 flex flex-col justify-center gap-8 text-primary">
+            class="bg-background w-full xl:w-1/3 max-w-[924px] mx-auto xl:mx-0 xl:max-w-[500px] xl:min-w-[350px] px-4 py-8 xl:p-8 flex flex-col justify-center gap-8 text-primary conditional-border">
             <div class="flex flex-col w-max">
 
                 <div class="w-full">
@@ -89,7 +89,7 @@
         </div>
 
         <div
-            class="flex flex-col justify-end xl:hidden w-full bg-black ">
+            class="flex flex-col justify-end xl:hidden w-full bg-background ">
             <p
                 class="text-center text-tertiary/60 px-2 py-4 text-xs">
                 designed and

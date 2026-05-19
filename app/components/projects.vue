@@ -1,13 +1,13 @@
 <template>
   <div class="w-full flex flex-col gap-4">
     <div v-for="e of experience" :key="e.key"
-      class="relative border-primary/50 bg-black text-primary border-[1px] p-4 w-full">
+      class="relative border-primary/50 bg-background text-primary border-[1px] p-4 w-full">
       <h3 class="text-primary text-lg">{{
         e.title.toLowerCase()
-        }}</h3>
+      }}</h3>
       <p class="text-tertiary/80">{{
         e.description.toLowerCase()
-        }}</p>
+      }}</p>
       <p
         class="bg-primary w-max top-0 right-0 font-bold text-card px-2 absolute">
         {{
