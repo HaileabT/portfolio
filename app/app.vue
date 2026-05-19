@@ -72,4 +72,19 @@ useSeoMeta({
     charset: "utf-8",
     viewport: "width=device-width, initial-scale=1",
 });
+
+
+watch(() => dark.value, () => {
+    localStorage.setItem('ht_pt', dark.value ? "dark" : "");
+})
+
+onMounted(() => {
+    if (!window) return;
+    const oldTheme = localStorage.getItem('ht_pt');
+    if (oldTheme === null) {
+        localStorage.setItem('ht_pt', theme.value || "");
+    } else {
+        dark.value = oldTheme === "dark"
+    }
+})
 </script>
