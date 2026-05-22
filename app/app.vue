@@ -8,7 +8,7 @@
     <div class="w-full h-full bg-background overflow-x-hidden font-primary"
         :class="`${theme}`">
         <button
-            class="fixed top-2 right-2 bg-secondary px-2 cursor-pointer flex justify-center min-w-[80px] border-black border"
+            class="fixed z-[1000] top-2 right-2 bg-secondary px-2 cursor-pointer flex justify-center min-w-[80px] border-black border"
             @click="toggleTheme">{{ dark
                 ? "light" : "dark" }}</button>
         <NuxtPage />
