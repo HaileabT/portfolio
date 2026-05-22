@@ -2,9 +2,10 @@
   <div class="w-full flex flex-col gap-4">
     <div v-for="e of experience" :key="e.key"
       class="relative border-primary/50 bg-background text-primary border-[1px] p-4 w-full">
-      <h3 class="text-primary text-lg">{{
-        e.title.toLowerCase()
-      }}</h3>
+      <h3 class="text-primary text-xl font-bold">
+        {{
+          e.title.toLowerCase()
+        }}</h3>
       <p class="text-tertiary/80">{{
         e.description.toLowerCase()
       }}</p>
@@ -21,7 +22,7 @@
       </p>
       <div
         v-if="e.resources && e.resources.length > 0">
-        <h3 class="mt-4">resources</h3>
+        <h3 class="mt-4 font-bold">resources</h3>
         <NuxtLink v-for="r of e.resources"
           :key="r.key" :href="r.url"
           target="_blank"

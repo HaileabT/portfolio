@@ -82,7 +82,7 @@
             </div>
             <div class="w-full max-w-[900px]">
                 <h2
-                    class="text-background mb-4 text-xl font-bold bg-primary px-2 w-max">
+                    class="text-card mb-4 text-xl font-bold bg-primary px-2 w-max">
                     skills</h2>
                 <Skills />
             </div>
