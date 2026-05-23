@@ -56,6 +56,7 @@ export default defineNuxtConfig({
     public: {
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
       logo_cloud_url: process.env.LOGO_CLOUDINARY_URL,
+      logo_cloud_url_svg: process.env.LOGO_CLOUDINARY_URL_SVG
     },
   },
   googleFonts: {

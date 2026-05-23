@@ -114,10 +114,9 @@ const logoContent = ref<string>();
 const { socials } = useSocials();
 
 onMounted(async () => {
-    if (useRuntimeConfig().public.logo_cloud_url) {
-        console.log("logo url", useRuntimeConfig().public.logo_cloud_url)
+    if (useRuntimeConfig().public.logo_cloud_url_svg) {
         const res = await $fetch<any>(
-            useRuntimeConfig().public.logo_cloud_url,
+            useRuntimeConfig().public.logo_cloud_url_svg,
             {
                 method: "GET",
                 headers: {
