@@ -53,6 +53,18 @@ type ProjectItem = {
 
 const experience: ProjectItem[] = [
   {
+    key: "expense tracker",
+    title: "Simple Expense Tracker",
+    progress: "in production",
+    tech: ["html", "javascript", "css", "sqlite", "drizzle", "expressjs", "nodejs"],
+    description: "A simple local expense tracker I actually made for myself and use.",
+    resources: [{
+      "key": "repo",
+      title: "Expense Tracker Repo",
+      url: "https://github.com/HaileabT/bare-minimun_local-expense-tracker"
+    }]
+  },
+  {
     key: "splitbuddy",
     title: "SplitBuddy",
     progress: "in progress",
@@ -75,7 +87,7 @@ const experience: ProjectItem[] = [
       title: "Firma Office Prototype",
       url: "https://zemraerp.lovable.app/"
     }]
-  }
+  },
 ]
 </script>
 
