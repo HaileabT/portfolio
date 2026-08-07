@@ -8,7 +8,7 @@
         }}</h3>
       <p class="text-tertiary/80">{{
         e.description.toLowerCase()
-      }}</p>
+        }}</p>
       <p
         class="bg-primary w-max top-0 right-0 font-bold text-card px-2 absolute">
         {{
@@ -67,14 +67,14 @@ const experience: ProjectItem[] = [
   {
     key: "splitbuddy",
     title: "SplitBuddy",
-    progress: "in progress",
+    progress: "in production",
     tech: ["nextjs", "supabase", "tailwind", "drizzle"],
     description: "A simple shared loan book in your phone.",
-    // resources: [{
-    //   key: 'minute-hand-web',
-    //   title: "Minute Hand Product Page",
-    //   url: "http://some-url.com"
-    // }]
+    resources: [{
+      key: 'splitbuddy-web',
+      title: "splitbuddy",
+      url: "https://splitbuddy.haileabtesfaye.dev"
+    }]
   },
   {
     key: "firmaoffice",
