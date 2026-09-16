@@ -1,13 +1,13 @@
 <template>
   <div class="w-full flex flex-col gap-2">
     <div v-for="e of experience" :key="e.key"
-      class="border-foreground/30 bg-background text-primary border-[1px] p-4  w-full flex flex-col gap-2 justify-between">
-      <h3 class="text-foreground text-base font-extrabold">
+      class="border-foreground/30 bg-background text-primary border-[1px] p-2 md:p-4  w-full flex flex-col gap-1 md:gap-2 justify-between">
+      <h3 class="text-foreground text-sm md:text-base font-extrabold">
         {{
           e.key + " / " + e.title
         }}</h3>
 
-      <div class="flex gap-2 text-foreground/40">
+      <div class="flex gap-2 text-foreground/40 text-sm md:text-base">
         <p>{{ e.from.toLocaleDateString('en-us', {
           month: "short", year:
             "numeric"

@@ -3,18 +3,10 @@
     <div class="flex gap-2 text-sm xl:flex">
       <div class="w-full flex gap-1 justify-center">
 
-        <div v-for="s of coreSkills" :key="s.key"
-          class="border-none bg-none text-foreground p-2 flex flex-col items-center">
+        <div v-for="s of coreSkills.concat(toolSkills)" :key="s.key"
+          class="border-none bg-none text-foreground p-2 flex flex-col flex-wrap w-[calc(100%-1rem)] items-center">
           <div v-html="s.svg" :title="s.title"
             :class="s.title === 'React.js' ? 'hover:animate-spin' : ''">
-          </div>
-        </div>
-      </div>
-      <div class="w-full flex gap-1 justify-center">
-        <div v-for="s of toolSkills" :key="s.key"
-          class="border-none bg-none text-foreground p-2 flex flex-col items-center">
-
-          <div v-html="s.svg" :title="s.title">
           </div>
         </div>
       </div>
