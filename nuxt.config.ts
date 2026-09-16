@@ -2,7 +2,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   ssr: true,
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "latest",
   devtools: { enabled: false },
   css: ["~/assets/css/tailwind.css"],
   app: {
@@ -34,14 +34,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: [
-    "@nuxtjs/google-fonts",
-    "@nuxt/image",
-    "@nuxt/icon",
-    "@nuxtjs/cloudinary",
-    "@nuxtjs/sitemap",
-    "@nuxtjs/robots",
-  ],
+  modules: ["@nuxtjs/google-fonts", "@nuxt/image", "@nuxt/icon", "@nuxtjs/sitemap", "@nuxtjs/robots"],
 
   sitemap: {
     urls: ["https://www.haileabtesfaye.dev"],
@@ -61,8 +54,6 @@ export default defineNuxtConfig({
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     public: {
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
-      logo_cloud_url: process.env.LOGO_CLOUDINARY_URL,
-      logo_cloud_url_svg: process.env.LOGO_CLOUDINARY_URL_SVG,
     },
   },
   googleFonts: {

@@ -23,7 +23,7 @@
                     <NuxtLink v-for="social of socials" :key="social.site"
                         :href="social.link">
                         <Icon :class="social.fontawesomeClass"
-                            :name="social.site" />
+                            :name="`mdi:${social.site}`" />
                     </NuxtLink>
                 </div>
             </div>
@@ -56,25 +56,7 @@
 </template>
 
 <script setup lang="ts">
-const logoContent = ref<string>();
-
 const { socials } = useSocials();
-
-onMounted(async () => {
-    if (useRuntimeConfig().public.logo_cloud_url_svg) {
-        const res = await $fetch<any>(
-            useRuntimeConfig().public.logo_cloud_url_svg,
-            {
-                method: "GET",
-                headers: {
-                    "Content-Type": "text/html",
-                },
-            },
-        ).catch((error) => console.error(error));
-        if (!res) return;
-        logoContent.value = await res.text();
-    }
-});
 </script>
 
 <style scoped>
