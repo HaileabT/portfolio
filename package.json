@@ -25,6 +25,9 @@
     "vue-router": "^4.6.4",
     "zod": "^4.6.5"
   },
+  "engines": {
+    "node": "26.4.0"
+  },
   "packageManager": "pnpm@12.4.1",
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.3",
