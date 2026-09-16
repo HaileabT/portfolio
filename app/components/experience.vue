@@ -1,24 +1,21 @@
 <template>
-  <div class="w-full flex flex-col gap-4">
+  <div class="w-full flex flex-col gap-2">
     <div v-for="e of experience" :key="e.key"
-      class="border-primary/60 bg-background text-primary border-[1px] p-4 w-full">
-      <h3
-        class="text-primary text-xl font-extrabold">
+      class="border-foreground/30 bg-background text-primary border-[1px] p-4  w-full flex flex-col gap-2 justify-between">
+      <h3 class="text-foreground text-base font-extrabold">
         {{
-          e.title.toLowerCase()
+          e.key + " / " + e.title
         }}</h3>
-      <p class="text-tertiary/80">{{
-        e.description.toLowerCase()
-        }}</p>
-      <div
-        v-if="e.resources && e.resources.length > 0">
-        <h3 class="mt-4 font-bold">resources</h3>
-        <NuxtLink v-for="r of e.resources"
-          :key="r.key" :href="r.url"
-          target="_blank"
-          class="text-secondary hover:underline">-
-          {{ r.title.toLowerCase() }}
-        </NuxtLink>
+
+      <div class="flex gap-2 text-foreground/40">
+        <p>{{ e.from.toLocaleDateString('en-us', {
+          month: "short", year:
+            "numeric"
+        }) }}</p> -
+        <p>{{ e.to ? e.to.toLocaleDateString('en-us', {
+          month: "short", year:
+            "numeric"
+        }) : "now" }}</p>
       </div>
     </div>
   </div>
@@ -35,38 +32,46 @@ type ExperienceItem = {
   title: string,
   description: string,
   url?: string,
-  resources?: ExperienceResourceItem[]
+  resources?: ExperienceResourceItem[],
+  from: Date,
+  to?: Date,
 }
 
 const experience: ExperienceItem[] = [
   {
-    key: "hashlabs",
+    key: "Hashlabs",
     title: "Fullstack Engineer",
     description: "Hashlabs hired me contractually to develop their operations and client dashboard. I was the architect and developer of the system.",
     resources: [{
       key: 'hashlabs-recomm',
       title: "Recommendation Letter",
       url: "https://drive.google.com/file/d/1NXzXJyMfEyPrV8c6MNQqFa9_udsUlwan/view?usp=sharing"
-    }]
+    }],
+    from: new Date('08-01-2025'),
+    to: new Date('02-01-2026')
   },
   {
-    key: "upwork",
-    title: "Fullstack Engineer and Browser Extension Developer",
+    key: "Upwork",
+    title: "Fullstack Engineer & Extension Developer",
     description: "I have completed and delivered 3 jobs on upwork.",
     resources: [{
       key: 'upwork-profile',
       title: "Upwork Profile",
       url: "https://www.upwork.com/freelancers/~016c67669a454e77a9?mp_source=share"
-    }]
+    }],
+    from: new Date('01-01-2023'),
+    to: undefined
   }, {
-    key: "internships",
+    key: "MMCY",
     title: "Intern Developer",
     description: "I have enrolled in 2 different internship programs from MMCY Tech and Efuye Gela.",
     resources: [{
       key: 'mmcytech-completion-certificate',
       title: "MMCY Tech Internship Certificate",
       url: "https://drive.google.com/file/d/1YkZStsayQmzJa0UG1lvDSxAWKSoz97S2/view?usp=sharing"
-    }]
+    }],
+    from: new Date('07-08-2024'),
+    to: new Date('10-8-2024')
   }
 ]
 </script>

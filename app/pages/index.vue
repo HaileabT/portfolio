@@ -1,109 +1,56 @@
 <template>
     <div
-        class="flex flex-col xl:flex-row w-svw xl:h-svh">
+        class="relative text-foreground flex flex-col xl:flex-row w-svw xl:h-svh h-svh overflow-hidden p-5 md:p-10 lg:p-15 xl:p-20">
+        <NuxtImg src="/main-bg.png"
+            class="[main.light_&]:hidden absolute object-cover! w-full h-full top-0 left-0 z-0" />
+        <NuxtImg src="/main-bg-dark.png"
+            class="[main.dark_&]:hidden absolute object-cover! w-full h-full top-0 left-0 z-0" />
         <div
-            class="bg-background w-full xl:w-1/3 max-w-[924px] mx-auto xl:mx-0 xl:max-w-[500px] xl:min-w-[350px] px-4 py-8 xl:p-8 flex flex-col justify-center gap-8 text-primary conditional-border">
-            <div class="flex flex-col w-max">
-
-                <div class="w-full">
-                    <div v-if="logoContent"
-                        v-html="logoContent"
-                        class="fill-secondary w-10">
-                    </div>
-
-                </div>
-                <div class="w-full my-4">
-                    <h1
-                        class="text-2xl font-bold mb-0 pb-0">
-                        haileab tesfaye
-                    </h1>
-                    <p class="mt-0 pt-0">a
-                        fullstack dev</p>
-                </div>
-                <div v-if="socials && socials.length > 0"
-                    class="flex w-full gap-2 text-secondary self-start">
-                    <div v-for="s of socials"
-                        :key="s.link">
-                        <NuxtLink :href="s.link"
-                            target="_blank">
-                            <i :class="s.fontawesomeClass"
-                                class="text-secondary text-lg hover:text-primary"
-                                :title="s.site" />
-                        </NuxtLink>
-                    </div>
+            class="relative z-1 bg-card w-full h-max my-auto max-w-[1200px] max-h-[800px] mx-auto flex flex-col gap-8 p-4 md:p-8 overflow-y-auto">
+            <NuxtLink
+                class="cursor-pointer flex items-center gap-2 text-sm bg-foreground w-max  px-2 absolute top-4 right-4 text-background"
+                href="https://drive.google.com/file/d/1N6trEdDI2ehYs1yGYT2_uCip0YtL5EEe/view?usp=drive_link"
+                target="_blank">
+                <Icon name="mdi:eye" /> <span>Resume</span>
+            </NuxtLink>
+            <div>
+                <h1 class="text-foreground text-xl font-bold lowercase">Haileab
+                    Tesfaye
+                </h1>
+                <p class="lowercase text-foreground/80">A fullstack
+                    engineer</p>
+                <div class="flex gap-2 mt-2">
+                    <NuxtLink v-for="social of socials" :key="social.site"
+                        :href="social.link">
+                        <Icon :class="social.fontawesomeClass"
+                            :name="social.site" />
+                    </NuxtLink>
                 </div>
             </div>
 
-            <div class="w-full">
-                <h2
-                    class="text-primary/70 w-full">
-                    a little about me</h2>
-                <p class="text-tertiary">i'm a
-                    backend focused fullstack
-                    developer. if thats what you
-                    are looking for, hit me up and
-                    let's work together.
-                </p>
+            <div class="flex gap-2 flex-col lg:flex-row">
+                <div class="flex flex-col gap-2 w-full">
+                    <h2>Experience</h2>
+                    <Experience class="w-full!" />
+                </div>
+                <div class="flex flex-col gap-2 w-full">
+                    <h2>Projects</h2>
+                    <Projects class="w-full!" />
+
+                </div>
             </div>
 
-            <div class="xl:block hidden w-full">
-                <div
-                    class="w-full h-px bg-secondary">
-                </div>
-                <p
-                    class="text-center text-tertiary/60 px-2 py-4 xl:pb-1">
-                    designed and
-                    developed by
-                    <NuxtLink target="_blank"
-                        href="https://github.com/haileabt"
-                        class="text-secondary">
-                        haileab tesfaye</NuxtLink>
-                </p>
-                <p
-                    class="text-center text-tertiary/60 px-2 py-0 text-sm">
-                    {{ new
-                        Date().getFullYear() }}
-                </p>
-            </div>
         </div>
         <div
-            class="w-full bg-card p-4 xl:py-16 flex flex-col items-center gap-8 overflow-y-auto">
-            <div class="w-full max-w-[900px]">
-                <h2
-                    class="text-card mb-4 text-xl font-bold bg-primary px-2 w-max">
-                    experience</h2>
-                <Experience />
-            </div>
-            <div class="w-full max-w-[900px]">
-                <h2
-                    class="text-card mb-4 text-xl font-bold bg-primary px-2 w-max">
-                    projects</h2>
-                <Projects />
-            </div>
-            <div class="w-full max-w-[900px]">
-                <h2
-                    class="text-card mb-4 text-xl font-bold bg-primary px-2 w-max">
-                    skills</h2>
+            class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 flex-col">
+
+            <div class=" bg-card">
                 <Skills />
             </div>
-        </div>
 
-        <div
-            class="flex flex-col justify-end xl:hidden w-full bg-background ">
-            <p
-                class="text-center text-tertiary/60 px-2 py-4 text-xs">
-                designed and
-                developed by
-                <NuxtLink target="_blank"
-                    href="https://github.com/haileabt"
-                    class="text-secondary">
-                    Haileab Tesfaye</NuxtLink>
-            </p>
-            <p
-                class="text-center text-tertiary/60 px-2 pb-8 text xs">
-                {{ new
-                    Date().getFullYear() }}
-            </p>
+            <span class="self-center bg-card text-xs">@{{ new
+                Date().getFullYear()
+            }}</span>
         </div>
     </div>
 </template>

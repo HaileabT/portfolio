@@ -5,6 +5,8 @@
     --color-secondary: var(--color-secondary);
     --color-tertiary: var(--color-tertiary);
 
+    --color-foreground: var(--color-foreground);
+
     --color-background: var(--color-background);
     --color-card: var(--color-card);
 
@@ -21,18 +23,23 @@
     --color-primary: rgb(0, 0, 0);
     --color-secondary: #ff2a00;
     --color-tertiary: rgb(10,10,10);
-    --color-background: #c9c9c9;
-    --color-card: #bbb;
+    
+    --color-foreground: #151B1B;
+
+    --color-background: #FFF5E4;
+    --color-card: #FFF5E4;
     --font-primary: "Space Mono"
 }
 
 .dark {
-    --color-primary: #9f956c;
-    --color-secondary: #ff2a00;
-    --color-tertiary: #bbb;
+    --color-primary: #6665DD;
+    --color-secondary: #ED6A5A;
+    --color-tertiary: #fcfcd6;
 
-    --color-background: rgb(0, 0, 0);
-    --color-card: rgb(10,10,10);
+    --color-foreground: #FFF5E4;
+
+    --color-background: #151B1B;
+    --color-card: #151B1B;
 
     --font-primary: "Space Mono"
 }

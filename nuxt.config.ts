@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: "2024-04-03",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ["~/assets/css/tailwind.css"],
   app: {
     head: {
@@ -27,15 +27,21 @@ export default defineNuxtConfig({
         {
           rel: "stylesheet",
           href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css",
-          integrity:
-            "sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==",
+          integrity: "sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==",
           crossorigin: "anonymous",
           referrerpolicy: "no-referrer",
         },
       ],
     },
   },
-  modules: ["@nuxtjs/google-fonts", "@nuxt/image", "@nuxt/icon", "@nuxtjs/cloudinary", "@nuxtjs/sitemap", "@nuxtjs/robots"],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "@nuxt/image",
+    "@nuxt/icon",
+    "@nuxtjs/cloudinary",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+  ],
 
   sitemap: {
     urls: ["https://www.haileabtesfaye.dev"],
@@ -56,7 +62,7 @@ export default defineNuxtConfig({
     public: {
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
       logo_cloud_url: process.env.LOGO_CLOUDINARY_URL,
-      logo_cloud_url_svg: process.env.LOGO_CLOUDINARY_URL_SVG
+      logo_cloud_url_svg: process.env.LOGO_CLOUDINARY_URL_SVG,
     },
   },
   googleFonts: {
@@ -66,7 +72,7 @@ export default defineNuxtConfig({
     families: {
       "Space Mono": true,
       "Luckiest Guy": true,
-      Righteous: true
+      Righteous: true,
     },
   },
   vite: {
@@ -74,7 +80,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ["/"]
-    }
-  }
+      routes: ["/"],
+    },
+  },
 });

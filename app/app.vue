@@ -5,14 +5,14 @@
         lerp: 0.1,
         wheelMultiplier: 0.8,
     }"> -->
-    <div class="w-full h-full bg-background overflow-x-hidden font-primary"
+    <main class="w-full h-full bg-background overflow-x-hidden font-primary"
         :class="`${theme}`">
         <button
-            class="fixed z-[1000] top-2 right-2 bg-secondary px-2 cursor-pointer flex justify-center min-w-[80px] border-black border"
+            class="fixed z-[1000]  text-sm top-2 right-2 text-background bg-foreground px-2 cursor-pointer flex justify-center min-w-[80px]"
             @click="toggleTheme">{{ dark
-                ? "light" : "dark" }}</button>
+                ? "Light" : "Dark" }}</button>
         <NuxtPage />
-    </div>
+    </main>
     <!-- </VueLenis> -->
 
     <noscript><iframe

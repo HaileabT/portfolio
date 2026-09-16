@@ -1,45 +1,21 @@
 <template>
   <div>
-    <div
-      class="flex xl:hidden gap-16 justify-between max-w-[500px] w-full">
-      <ul
-        class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
-        <li v-for="s of coreSkills" :key="s.key"
-          class="text-tertiary text-[0.9rem]! sm:text-base! md:text-lg! lg:text-xl!">
-          {{ s.title.toLowerCase() }}</li>
-      </ul>
-      <ul
-        class="flex flex-col gap-2 list-disc list-inside marker:text-secondary">
-        <li v-for="s of toolSkills" :key="s.key"
-          class="text-tertiary text-[0.9rem]! sm:text-base! md:text-lg! lg:text-xl!">
-          {{ s.title.toLowerCase() }}</li>
-      </ul>
-    </div>
-    <div
-      class="flex-col gap-4 text-sm hidden xl:flex">
-      <div
-        class="w-full flex gap-8 flex-wrap justify-center">
+    <div class="flex gap-2 text-sm xl:flex">
+      <div class="w-full flex gap-1 justify-center">
 
         <div v-for="s of coreSkills" :key="s.key"
-          class="border-none bg-none text-primary p-4 flex flex-col items-center">
+          class="border-none bg-none text-foreground p-2 flex flex-col items-center">
           <div v-html="s.svg" :title="s.title"
             :class="s.title === 'React.js' ? 'hover:animate-spin' : ''">
           </div>
-          <li class="text-secondary list-none">
-            {{ s.title.toLowerCase() }}
-          </li>
         </div>
       </div>
-      <div
-        class="w-full flex gap-8 flex-wrap justify-center">
+      <div class="w-full flex gap-1 justify-center">
         <div v-for="s of toolSkills" :key="s.key"
-          class="border-none bg-none text-primary p-4 flex flex-col items-center">
+          class="border-none bg-none text-foreground p-2 flex flex-col items-center">
 
           <div v-html="s.svg" :title="s.title">
           </div>
-          <li class="text-secondary list-none">
-            {{ s.title.toLowerCase() }}
-          </li>
         </div>
       </div>
     </div>
@@ -47,9 +23,9 @@
 </template>
 
 <script lang="ts" setup>
-const logoColor = 'var(--color-primary)'
+const logoColor = 'var(--color-foreground)'
 const logoSecondaryColor = `var(--color-secondary)`
-const logoSize = 35
+const logoSize = 20
 
 type SkillItem = {
   key: string,
