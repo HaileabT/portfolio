@@ -34,7 +34,14 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxtjs/google-fonts", "@nuxt/image", "@nuxt/icon", "@nuxtjs/sitemap", "@nuxtjs/robots"],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "@nuxt/image",
+    "@nuxt/icon",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+    "@vercel/analytics",
+  ],
 
   sitemap: {
     urls: ["https://www.haileabtesfaye.dev"],
